@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
@@ -31,6 +33,20 @@ internal fun VideoListScreenContent(
     ) {
 
         if (!uiState.isLoading) {
+
+            LazyColumn(
+                modifier = modifier
+                    .padding(horizontal = AppTheme.paddings.padding10)
+            ) {
+                items(uiState.videos) { video ->
+
+                    VideoCard(
+                        modifier = Modifier.padding(vertical = AppTheme.paddings.padding10),
+                        video = video,
+                        onClick = { onEvent(VideoListUIEvent.OnVideoClick(video.title)) }
+                    )
+                }
+            }
 
         } else {
             LoadingScreenPlaceHolder(Modifier, true)

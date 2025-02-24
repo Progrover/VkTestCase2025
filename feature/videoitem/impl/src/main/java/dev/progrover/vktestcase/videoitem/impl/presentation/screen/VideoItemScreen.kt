@@ -10,16 +10,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavController
-import dev.progrover.vktestcase.videoitem.api.VideoItemFeature
-import dev.progrover.vktestcase.videoitem.impl.presentation.components.screencontent.VideoListScreenContent
-import dev.progrover.vktestcase.videoitem.impl.presentation.contract.VideoListUIEffect
-import dev.progrover.vktestcase.videoitem.impl.presentation.viewmodel.VideoListViewModel
+import dev.progrover.vktestcase.videoitem.impl.presentation.components.screencontent.VideoItemScreenContent
+import dev.progrover.vktestcase.videoitem.impl.presentation.contract.VideoItemUIEffect
+import dev.progrover.vktestcase.videoitem.impl.presentation.viewmodel.VideoItemViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
-internal fun VideoListScreen(
+internal fun VideoItemScreen(
     navController: NavController,
-    viewModel: VideoListViewModel,
+    viewModel: VideoItemViewModel,
 ) {
 
     val context = LocalContext.current
@@ -30,20 +29,20 @@ internal fun VideoListScreen(
         viewModel.effect.collectLatest { effect ->
             when (effect) {
 
-                is VideoListUIEffect.ShowError ->
+                is VideoItemUIEffect.ShowError ->
                     snackbarHostState.showSnackbar(
                         message = context.getString(effect.messageResId),
                         withDismissAction = true,
                         duration = SnackbarDuration.Short
                     )
 
-                is VideoListUIEffect.NavigateToVideoItemScreen ->
-                    VideoItemFeature.openVideoListScreen(navController, effect.videoJson)
+                is VideoItemUIEffect.NavigateBack ->
+                    navController.popBackStack()
             }
         }
     }
 
-    VideoListScreenContent(
+    VideoItemScreenContent(
         modifier = Modifier,
         uiState = uiState,
         onEvent = viewModel::setEvent,

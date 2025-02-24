@@ -32,6 +32,8 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.ui)
     coreBase()
     coreTheme()
     coreUiCommon()
@@ -41,6 +43,9 @@ dependencies {
     navigation()
     coil()
 
+    implementation(Dependencies.exoPlayer)
+
+    itemApi()
 }
 
 kapt {
