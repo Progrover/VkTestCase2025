@@ -1,6 +1,6 @@
-###**VK Internship - Тестовое задание**###
+### **VK Internship - Тестовое задание** ###
 
-##**Стек:**##
+## **Стек:** ##
 language: Kotlin
 di: Hilt
 image: Coil
@@ -9,7 +9,7 @@ pattern: MVI, multimodule
 framework: Compose
 minSdk 26
 
-##Build Gradle##
+## Build Gradle ##
 В проекте создан модуль buildSrc с едиными зависимостями для всего проекта.
 
 Объект *Versions.kt* содержит версии всех зависимостей
