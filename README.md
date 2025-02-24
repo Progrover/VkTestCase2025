@@ -1,14 +1,14 @@
-### **VK Internship - Тестовое задание** ###
+##### **VK Internship - Тестовое задание** #####
 
 ## **Стек:** ##
-language: Kotlin
-di: Hilt
-image: Coil
-network: Coroutines, Retrofit
-pattern: MVI, multimodule
-framework: Compose
-minSdk 26
-
+* language: Kotlin
+* di: Hilt
+* image: **Coil**
+* network: **Coroutines, Retrofit**
+* pattern: **MVI, multimodule**
+* framework: Compose
+* minSdk 26
+---
 ## Build Gradle ##
 В проекте создан модуль buildSrc с едиными зависимостями для всего проекта.
 
