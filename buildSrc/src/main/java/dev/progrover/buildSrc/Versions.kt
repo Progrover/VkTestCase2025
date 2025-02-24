@@ -61,4 +61,7 @@ object Versions {
 
     //serialization
     const val serialization = "1.6.0"
+
+    //exoplayer
+    const val exoPlayer = "0.32.0"
 }

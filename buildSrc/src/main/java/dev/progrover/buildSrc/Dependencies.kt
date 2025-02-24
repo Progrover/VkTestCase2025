@@ -73,6 +73,8 @@ object Dependencies {
     const val desugaring = "com.android.tools:desugar_jdk_libs:${Versions.desugaring}"
     const val oneTap = "com.vk.id:onetap-compose:${Versions.oneTap}"
     const val uiController = "com.google.accompanist:accompanist-systemuicontroller:${Versions.accompanist}"
+    const val exoPlayer =     "com.google.android.exoplayer:exoplayer:${Versions.accompanist}"
+
 
 }
 fun DependencyHandler.desugaring() {

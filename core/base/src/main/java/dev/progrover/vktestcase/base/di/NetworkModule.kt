@@ -44,7 +44,7 @@ class NetworkModule {
     ): Retrofit =
         Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl("https://drive.google.com/")
+            .baseUrl("https://www.googleapis.com/")
             .addConverterFactory(converterFactory)
             .build()
 
