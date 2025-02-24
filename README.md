@@ -2,13 +2,13 @@
 ***
 ## **Стек:** ##
 
-* language: **Kotlin**
-* di: **Hilt**
-* image: **Coil**
-* network: **Coroutines, Retrofit**
-* pattern: **MVI, multimodule**
-* framework:**Compose**
-* minSdk **26**
+* Language: **Kotlin**
+* DI: **Hilt**
+* Image: **Coil**
+* Network: **Coroutines, Retrofit**
+* Pattern: **MVI, multimodule**
+* Framework:**Compose**
+* MinSdk **26**
 ---
 ## Build Gradle ##
 
